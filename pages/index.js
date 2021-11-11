@@ -1,17 +1,53 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import { request } from '../lib/datocms'
+import { Search } from '../src/components/Search';
+const HOMEPAGE_QUERY = `
+query MyQuery {
+  allExamples {
+    id
+    title
+    explanation {
+      value
+    }
+    image {
+      responsiveImage{
+         width
+        webpSrcSet
+        title
+        srcSet
+        src
+        sizes
+        height
+        bgColor
+        base64
+        aspectRatio
+        alt
+      }
+    }
+  }
+}
+`
+export async function getStaticProps() {
+  const data = await request({
+    query: HOMEPAGE_QUERY,
+  });
+  return {
+    props: { data },
+  };
+}
 
 
-export default function Home() {
+export default function Home(props) {
+  const {data} = props
+  const exemplos = data.allExamples
+  console.log(exemplos)
   return (
     <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7042999523953127"
-     crossorigin="anonymous"></script>
       </Head>
-    Hello world
+      <Search exemplos={exemplos}/>
     </div>
   )
 }
