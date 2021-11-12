@@ -6,7 +6,7 @@ export function Example({padrao}){
 
   function getRandomInt(max) {
     const proxImage = Math.floor(Math.random() * max);
-    while(proxImage == numImage){
+    while(proxImage == numImage && quant != 1){
       proxImage = Math.floor(Math.random() * max);
     }
     return proxImage;
