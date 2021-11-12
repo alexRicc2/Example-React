@@ -3,8 +3,10 @@ import { useState } from 'react';
 import styles from './styles.module.scss'
 import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close'
+import { useExemplo } from '../../hooks/Exemplo';
 export function Search({ exemplos }) {
 
+  const {exemplo, setExemplo} = useExemplo();
   const [search, setSearch] = useState('')
   return (
     <div className={styles.search}>
@@ -31,7 +33,10 @@ export function Search({ exemplos }) {
               return exemplo
             }
           }).slice(0,15).map((exemplo, key) => {
-            return <div key={key} className={styles.dataItem} onClick={() => setSearch(exemplo.title)}><p>{exemplo.title}</p></div>
+            return <div key={key} className={styles.dataItem} onClick={() => {
+              setSearch('')
+              setExemplo(exemplo)
+            }}><p>{exemplo.title}</p></div>
           })}
       </div>
     </div>
