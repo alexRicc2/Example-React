@@ -1,0 +1,19 @@
+.container{
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.botao{
+  padding: 8px 10px;
+  margin: 0 4px;
+  background-color: #333;
+  border: 1px solid gray;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover{
+    background-color: #444;
+  }
+}

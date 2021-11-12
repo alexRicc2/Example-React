@@ -74,10 +74,14 @@ export default function Home(props) {
       
     <ExemploProvider>
       <Head>
-        <title>Create Next App</title>
+        <title>React Example</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
     <div className={styles.container}>
+      <h1 className={styles.title}>React Example
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+
+      </h1>
       <Search exemplos={exemplos}/>
       <ListaExemplos exemplos={exemplos}/>
       <Example/>

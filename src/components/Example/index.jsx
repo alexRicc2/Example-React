@@ -18,7 +18,7 @@ export function Example(){
   const quant = exemplo.image.length
   
   
-  return <div> 
+  return <div className={styles.container}> 
     <h1 className={styles.title}>{exemplo.title}</h1>
     <div className={styles.imageContainer}>
     <button className={styles.botao} onClick={()=>{
@@ -28,6 +28,7 @@ export function Example(){
     <Image data={exemplo.image[numImage].responsiveImage}/>
     </div>
     <StructuredText
+      className={styles.texto}
       data={exemplo.explanation}
       renderBlock={({ record }) => {
         switch (record.__typename) {

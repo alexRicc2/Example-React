@@ -1,3 +1,39 @@
+.container{
+  p{
+    margin: 1em 0;
+    line-height: 2em;
+    font-size: 18px;
+    color: silver;
+    
+  }
+  ul{
+    padding: 0 1em;
+    margin-bottom: 20px;
+    li{
+      list-style: disc;
+      list-style-position: inside;
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: silver;
+    }
+  }
+  ol{
+    padding: 0 1em;
+    margin-bottom: 30px;
+    li{
+      list-style-type: decimal;
+      list-style-position: inside;
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: silver;
+    }
+  }
+  strong{
+    color: #3A2883;
+    font-weight: normal;
+  }
+}
+
 .title{
   margin: 44px 0;
   text-align: center;
@@ -17,8 +53,13 @@
   position: absolute;
   z-index: 2;
   right: -44px;
+  cursor: pointer;
   @media screen and (max-width:475px) {
     top: -47px;
     right: 0;
+  }
+
+  &:hover{
+    background-color: #396d83;
   }
 }
