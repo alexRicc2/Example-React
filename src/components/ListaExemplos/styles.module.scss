@@ -3,6 +3,9 @@
   display: flex;
   flex-wrap: wrap;
   width: 80%;
+  @media screen and(max-width: 475px){
+    width: 100%;
+  }
 }
 
 .botao{
