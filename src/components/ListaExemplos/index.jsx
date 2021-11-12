@@ -7,7 +7,7 @@ export function ListaExemplos({exemplos}){
     <div>
       {exemplos.slice(0,10).map((exemplo,index) =>{
         return(
-          <button onClick={()=>{
+          <button key={index} onClick={()=>{
             setExemplo(exemplo);
             setNumImage(0);
           }}>{exemplo.title}</button>
