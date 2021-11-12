@@ -3,6 +3,9 @@ import { request } from '../lib/datocms'
 import { Search } from '../src/components/Search';
 import { Example } from '../src/components/Example';
 import { ExemploProvider } from '../src/hooks/Exemplo';
+import styles from '../styles/styles.module.scss';
+import { ListaExemplos } from '../src/components/ListaExemplos';
+import { Footer } from '../src/components/Footer';
 const HOMEPAGE_QUERY = `
 query MyQuery {
   allExamples {
@@ -66,21 +69,20 @@ export default function Home(props) {
   const {data} = props
   console.log("data: ",data)
   const exemplos = data.allExamples
-  const padrao = data.allPadraos
-  console.log(exemplos, padrao)
+  console.log(exemplos)
   return (
       
     <ExemploProvider>
-    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+    <div className={styles.container}>
       <Search exemplos={exemplos}/>
-      <Example padrao={padrao}/>
-      
+      <ListaExemplos exemplos={exemplos}/>
+      <Example/>
     </div>
+    <Footer/>
     </ExemploProvider>
   )
 }

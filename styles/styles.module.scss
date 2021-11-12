@@ -1,0 +1,11 @@
+.container{
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  @media screen and (max-width:475px) {
+    width: 100%;
+  }
+}

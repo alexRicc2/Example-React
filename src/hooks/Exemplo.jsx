@@ -3,12 +3,12 @@ import React, { createContext , useContext, useState} from 'react';
 export const ExemploContext = createContext({})
 
 function ExemploProvider({children}){
-
+  const [numImage , setNumImage] = useState(0)
   const [exemplo, setExemplo] = useState(
     
       {
         "id": "72597743",
-        "title": "Pesquise por algo relacionado a React",
+        "title": "Pesquise e selecione algo relacionado a React js",
         "explanation": {
           "value": {
             "schema": "dast",
@@ -49,7 +49,7 @@ function ExemploProvider({children}){
   )
 
   return(
-    <ExemploContext.Provider value={{exemplo, setExemplo}}>
+    <ExemploContext.Provider value={{exemplo, setExemplo, numImage, setNumImage}}>
     {children}
     </ExemploContext.Provider>
   )

@@ -6,7 +6,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import { useExemplo } from '../../hooks/Exemplo';
 export function Search({ exemplos }) {
 
-  const {exemplo, setExemplo} = useExemplo();
+  const {exemplo, setExemplo, setNumImage} = useExemplo();
   const [search, setSearch] = useState('')
   return (
     <div className={styles.search}>
@@ -36,6 +36,7 @@ export function Search({ exemplos }) {
             return <div key={key} className={styles.dataItem} onClick={() => {
               setSearch('')
               setExemplo(exemplo)
+              setNumImage(0)
             }}><p>{exemplo.title}</p></div>
           })}
       </div>
