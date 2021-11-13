@@ -47,7 +47,7 @@ function ExemploProvider({children}){
         ],
         "code": {
           "code": [
-            "io",
+            "https://examplereactjs.vercel.app/",
             "oi"
           ]
         }
