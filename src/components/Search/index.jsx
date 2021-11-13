@@ -33,11 +33,11 @@ export function Search({ exemplos }) {
               return exemplo
             }
           }).slice(0,15).map((exemplo, key) => {
-            return <div key={key} className={styles.dataItem} onClick={() => {
+            return <button key={key} className={styles.dataItem} onClick={() => {
               setSearch('')
               setExemplo(exemplo)
               setNumImage(0)
-            }}><p>{exemplo.title}</p></div>
+            }}><p>{exemplo.title}</p></button>
           })}
       </div>
     </div>

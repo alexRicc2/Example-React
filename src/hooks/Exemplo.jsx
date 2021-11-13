@@ -8,7 +8,7 @@ function ExemploProvider({children}){
     
       {
         "id": "72597743",
-        "title": "Pesquise e selecione algo relacionado a React js",
+        "title": "Pesquise por algo relacionado a React",
         "explanation": {
           "value": {
             "schema": "dast",
@@ -44,7 +44,13 @@ function ExemploProvider({children}){
               "width": 1000
             }
           }
-        ]
+        ],
+        "code": {
+          "code": [
+            "io",
+            "oi"
+          ]
+        }
       }
   )
 
